@@ -75,6 +75,7 @@ def main():
     tree.evaluate_space()
     print('part 1 :',sum(tree.PART_1_find_desired_directories()))
 
+    print(tree.space)
     freespace = 70000000-tree.space
     required_space=30000000-freespace
     print('part 2 :',min(tree.PART_2_find_desired_directories(required_space)))

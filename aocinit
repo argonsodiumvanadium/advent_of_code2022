@@ -1,0 +1,15 @@
+# /usr/bin/env bash
+
+if [[ -z $1 ]]
+then
+    echo "enter day number"
+    exit
+fi
+
+mkdir day$1
+cat .pytemplate > ./day$1/main.py
+clear
+echo "use py3 <>"
+firefox --new-tab "https://adventofcode.com/2022/day/$1"
+./save_page "https://adventofcode.com/2022/day/$1/input" --browser "firefox"  --destination "./day$1/input.in"
+
