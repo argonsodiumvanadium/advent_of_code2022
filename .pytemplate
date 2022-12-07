@@ -1,13 +1,14 @@
 import os
 import math
 import sys
+from stdlib import *
 
 FNAME='input.in'
 
-def read_lines (FNAME):
+def read_lines (fname):
     with open(fname) as file:
         return file.read().split('\n')
 
-for line in read_lines(fname):
+# == MAIN ==
+for line in read_lines(FNAME):
     pass        
-

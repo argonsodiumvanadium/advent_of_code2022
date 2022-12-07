@@ -11,11 +11,14 @@ def read_lines (fname):
         return file.read().split('\n')
 
 pwd=[]
-storage={}
+storage={'/':0}
 for line in read_lines(FNAME):
     if not line: continue
     if "$ cd .." in line:
         pwd.pop()
+        continue
+    if "$ cd /" in line:
+        pwd = ['/']
         continue
     elif "$" in line and "cd" in line:
         pwd.append(line.split(' ')[2])
