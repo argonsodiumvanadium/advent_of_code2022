@@ -1,2 +1,2 @@
-curl --cookie `cat ./COOKIE` --request GET https://adventofcode.com/2022/day/8/input
+curl --cookie `cat ./COOKIE` --request GET https://adventofcode.com/$2/day/$1/input
 alias cat='bat'

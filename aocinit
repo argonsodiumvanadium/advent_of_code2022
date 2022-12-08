@@ -17,10 +17,11 @@ then
 fi
 
 alias r="py main.py"
-mkdir day$1
-ln -s $HOME/.programs/AOC/stdlib.py $HOME/.programs/AOC/$YEAR/day$1/stdlib.py
-cat $HOME/.programs/AOC/.pytemplate > $HOME/.programs/AOC/$YEAR/day$1/main.py
+mkdir $HOME/.programs/AOC/$YEAR/day$QUESTION
+ln -s $HOME/.programs/AOC/stdlib.py $HOME/.programs/AOC/$YEAR/day$QUESTION/stdlib.py
+cat $HOME/.programs/AOC/.pytemplate > $HOME/.programs/AOC/$YEAR/day$QUESTION/main.py
 clear
 echo "use py <filename>"
-firefox --new-tab "https://adventofcode.com/2022/day/$1"
-bash ./get_input > $HOME/.programs/AOC/$YEAR/day$1/input.in
+firefox --new-tab "https://adventofcode.com/$2/day/$1"
+bash $HOME/.programs/AOC/get_input $QUESTION $YEAR > $HOME/.programs/AOC/$YEAR/day$QUESTION/input.in
+code $HOME/.programs/AOC/$YEAR/day$QUESTION

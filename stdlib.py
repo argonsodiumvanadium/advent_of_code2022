@@ -18,3 +18,15 @@ def cut(arr:list,i:int,j:int):
     for i in range(i,j):
         del arr[i]
     return ret
+
+def row (arr,i):
+    return arr[i]
+
+def col (arr,i):
+    return [elem[i] for elem in arr]
+
+def prod(arr):
+    p=arr[0]
+    for i in arr[1:]:
+        p*=i
+    return p
