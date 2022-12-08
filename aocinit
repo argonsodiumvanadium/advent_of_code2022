@@ -1,16 +1,26 @@
 # /usr/bin/env bash
 
+YEAR=2022
+QUESTION=-1
 if [[ -z $1 ]]
 then
-    echo "enter day number"
+    QUESTION=$1
+    echo "aocinit <question>  #defaults to year 2022"
+    echo "aocinit <question> <year>"
     exit
+fi
+
+if [[ -n $2 ]]
+then
+    YEAR=$2
+    QUESTION=$1
 fi
 
 alias r="py main.py"
 mkdir day$1
-ln -s $HOME/.programs/AOC/stdlib.py ./day$1/stdlib.py
-cat .pytemplate > ./day$1/main.py
+ln -s $HOME/.programs/AOC/stdlib.py $HOME/.programs/AOC/$YEAR/day$1/stdlib.py
+cat $HOME/.programs/AOC/.pytemplate > $HOME/.programs/AOC/$YEAR/day$1/main.py
 clear
 echo "use py <filename>"
 firefox --new-tab "https://adventofcode.com/2022/day/$1"
-./save_page "https://adventofcode.com/2022/day/$1/input" --browser "firefox"  --destination "./day$1/input.in"
+bash ./get_input > $HOME/.programs/AOC/$YEAR/day$1/input.in

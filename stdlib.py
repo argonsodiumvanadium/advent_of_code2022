@@ -8,3 +8,13 @@ def inti(items:list):
 
 def oper(operation):
     return eval(f"lambda x,y : x {operation} y")
+
+"""
+mutates (arr) to (arr[:i] + arr[j:])
+returns          (arr[i:j]          )
+"""
+def cut(arr:list,i:int,j:int):
+    ret = arr[i:j]
+    for i in range(i,j):
+        del arr[i]
+    return ret
