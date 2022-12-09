@@ -4,11 +4,11 @@ YEAR=2022
 QUESTION=-1
 if [[ -z $1 ]]
 then
-    QUESTION=$1
     echo "aocinit <question>  #defaults to year 2022"
     echo "aocinit <question> <year>"
     exit
 fi
+QUESTION=$1
 
 if [[ -n $2 ]]
 then
@@ -24,4 +24,3 @@ clear
 echo "use py <filename>"
 firefox --new-tab "https://adventofcode.com/$2/day/$1"
 bash $HOME/.programs/AOC/get_input $QUESTION $YEAR > $HOME/.programs/AOC/$YEAR/day$QUESTION/input.in
-code $HOME/.programs/AOC/$YEAR/day$QUESTION
