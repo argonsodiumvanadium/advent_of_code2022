@@ -1,3 +1,4 @@
+import math
 """
 data  : string to be converted to ints
 delim :
@@ -74,4 +75,8 @@ def r(start,end=None,step=1):
         return range(0,start,step)
     else:
         return range(start,end,step)
-
+"""
+pythagoras theorum
+"""
+def pyth(a,b):
+    return math.sqrt(a**2 + b**2)
