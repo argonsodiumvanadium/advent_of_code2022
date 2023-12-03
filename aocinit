@@ -1,6 +1,6 @@
 # /usr/bin/env bash
 
-YEAR=2022
+YEAR=-1
 QUESTION=-1
 if [[ -z $1 ]]
 then
@@ -16,11 +16,13 @@ then
     QUESTION=$1
 fi
 
-alias r="py main.py"
-mkdir $HOME/.programs/AOC/$YEAR/day$QUESTION
-ln -s $HOME/.programs/AOC/stdlib.py $HOME/.programs/AOC/$YEAR/day$QUESTION/stdlib.py
-cat $HOME/.programs/AOC/.pytemplate > $HOME/.programs/AOC/$YEAR/day$QUESTION/main.py
+alias r="python3 main.py"
+mkdir ./$YEAR/$QUESTION
+ln -s ./stdlib.py ./$YEAR/$QUESTION/stdlib.py
+cat ./boilerplate.py > ./$YEAR/$QUESTION/main.py
 clear
-echo "use py <filename>"
-firefox --new-tab "https://adventofcode.com/$2/day/$1"
-bash $HOME/.programs/AOC/get_input $QUESTION $YEAR > $HOME/.programs/AOC/$YEAR/day$QUESTION/input.in
+echo "use python3 <filename>"
+firefox --new-tab "https://adventofcode.com/$YEAR/day/$QUESTION"
+cd ./$YEAR/$QUESTION/
+aoc download --year $YEAR --day $QUESTION
+
